@@ -23,6 +23,9 @@ alias grm='git ls-files --deleted -z | xargs -0 git rm'		# git rm (remove) all d
 alias got='git '
 alias get='git '
 
+alias ftp-on='sudo -s launchctl load -w /System/Library/LaunchDaemons/ftp.plist'
+alias ftp-off='sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist'
+
 # Remove Node and all Node Modules from system
 alias uninstall-node="npm ls -gp | awk -F/ '/node_modules/ && !/node_modules.*node_modules/ {print $NF}' | xargs npm -g rm"
 
