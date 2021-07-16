@@ -1,11 +1,27 @@
+alias has="hasura --admin-secret abc123 "
+
+reseed() {
+  hasura seeds create $1 --admin-secret FV7boUTmPX4Fj94vFLtuT7tJ --endpoint https://venture-coopstg.azurefd.net --from-table $1
+}
+
+# Enable alias use by xargs - https://unix.stackexchange.com/questions/141367/have-xargs-use-alias-instead-of-binary
+alias xargs='xargs '
+alias reload="source ~/.bash_profile"
+
+alias ssh-tyney="ssh -i ~/.ssh/tyney-app.pem bitnami@13.239.150.66"
+
 alias link="ln -s /srv/www/* ~/Sites/"
 
 alias ll="ls -laGT"
+alias clr="clear && printf '\e[3J'"
 alias sites="cd ~/Sites/;pwd;ll;"
 alias desk="cd ~/Desktop;pwd;ll;"
-alias docs="cd ~/Documents;pwd;ll;"
+#alias docs="cd ~/Documents;pwd;ll;"
 
 alias apache='sudo apachectl configtest &&  sudo apachectl '
+
+alias restart-usb='sudo launchctl stop com.apple.usbd && sudo launchctl start com.apple.usbd'
+
 
 alias gs='git status '
 alias gp='git pull '
